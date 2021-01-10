@@ -9,7 +9,13 @@
 </template>
 
 <style lang="scss">
+body {
+  background-color: $bgColor;
+  margin: 0;
+}
+
 #app {
+  min-height: 100vh;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
