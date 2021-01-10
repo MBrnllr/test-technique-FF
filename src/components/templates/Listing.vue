@@ -3,6 +3,7 @@
         <Header />
         <div id="pageContent">
             <PageHeader title="Feeds" />
+            <Grid :posts="$props.data" />
         </div>
         <Footer />
     </div>
@@ -12,6 +13,7 @@
 import Header from '@/components/organisms/Header.vue';
 import PageHeader from '@/components/organisms/PageHeader.vue';
 import Footer from '@/components/organisms/Footer.vue';
+import Grid from '@/components/organisms/Grid.vue';
 
 export default {
     name: 'Listing',
@@ -19,6 +21,10 @@ export default {
         Header,
         PageHeader,
         Footer,
+        Grid,
+    },
+    props: {
+        data: Array,
     },
 }
 </script>
@@ -35,5 +41,6 @@ export default {
         display: flex;
         flex-flow: column;
         flex: 1;
+        margin-bottom: 4em;
     }
 </style>

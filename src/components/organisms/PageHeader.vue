@@ -21,6 +21,7 @@ export default {
     background-color: $headerBg;
     padding: 0.5em 2em;
     box-sizing: border-box;
+    margin-bottom: 2em;
       h1 {
         text-transform: uppercase;
         text-align: center;
