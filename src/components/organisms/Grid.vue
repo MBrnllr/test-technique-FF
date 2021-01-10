@@ -1,6 +1,6 @@
 <template>
   <div class="grid grid-cards">
-      <Card
+      <PostCard
         v-for="post in $props.posts"
         v-bind:key="post.id"
         :post="post"
@@ -9,12 +9,12 @@
 </template>
 
 <script>
-import Card from '@/components/molecules/Card.vue';
+import PostCard from '@/components/molecules/PostCard.vue';
 
 export default {
     name: 'Grid',
     components: {
-        Card,
+        PostCard,
     },
     props: {
         posts: Array,

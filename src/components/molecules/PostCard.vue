@@ -1,5 +1,5 @@
 <template>
-  <div class="card"  v-if="$props.post && $props.post.image">
+  <div class="card"  v-if="$props.post && $props.post.image" v-on:click="openSinglePostPage()">
     <div class="backgroundBox" :style="`background-image: url(${$props.post.image});`"></div>
     <div class="contentBox">
         <span>Likes : {{$props.post.likes.length}}</span>
@@ -11,9 +11,14 @@
 
 <script>
 export default {
-    name: 'Card',
+    name: 'PostCard',
     props: {
         post: Object,
+    },
+    methods: {
+        openSinglePostPage () {
+            this.$router.push(`/post/${this.$props.post.id}`);
+        },
     },
 }
 </script>

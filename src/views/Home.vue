@@ -1,5 +1,5 @@
 <template>
-  <Listing :data="data" />
+  <Listing :data="$data.data" />
 </template>
 
 <script>
@@ -23,7 +23,7 @@ export default {
     methods: {
         async getName () {
             const { data } = await axios.get('https://5ff9ce0917386d0017b521c4.mockapi.io/fake-api/posts');
-            this.data = data;
+            this.$data.data = data;
         },
     },
 }
