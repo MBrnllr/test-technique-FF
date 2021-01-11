@@ -17,8 +17,8 @@ export default {
     },
     data () {
         return {
-            post: Object,
-            user: Object,
+            post: {},
+            user: {},
         };
     },
     beforeMount () {
@@ -34,8 +34,6 @@ export default {
         async getUserDetails () {
             const userId = this.$data.post.userId;
             const { data } = await axios.get(`https://5ff9ce0917386d0017b521c4.mockapi.io/fake-api/users/${userId}`);
-            console.log('== User');
-            console.log(data);
             this.$data.user = data ? data : {name: 'Anonymous'};
         },
     },

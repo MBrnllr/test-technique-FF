@@ -1,5 +1,8 @@
 <template>
-  <Listing :data="$data.data" />
+  <Listing
+    v-if="$data.data"
+    :data="$data.data"
+  />
 </template>
 
 <script>
@@ -15,14 +18,15 @@ export default {
     data () {
         return {
             data: [],
+            page: Number,
         };
     },
     beforeMount () {
-        this.getName();
+        this.getPosts();
     },
     methods: {
-        async getName () {
-            const { data } = await axios.get('https://5ff9ce0917386d0017b521c4.mockapi.io/fake-api/posts');
+        async getPosts () {
+            const { data } = await axios.get('https://5ff9ce0917386d0017b521c4.mockapi.io/fake-api/posts?page=1&limit=9');
             this.$data.data = data;
         },
     },

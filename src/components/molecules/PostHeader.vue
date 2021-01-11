@@ -2,6 +2,7 @@
   <div class="postHeader"  >
     <UserCard :user="$props.user" />
     <Button
+      :onClick="() => {}"
       label="Voir le profil"
       theme="primary"
       :plain="true"
@@ -33,5 +34,11 @@ export default {
       flex: 50% 0 1;
       border: 1px solid #eee;
       background-color: white;
+      @media screen and (max-width: $breakpointMd){
+        flex-flow: column;
+      }
+      .button {
+        cursor: not-allowed;
+      }
   }
 </style>

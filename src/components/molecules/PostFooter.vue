@@ -1,41 +1,24 @@
 <template>
   <div class="postFooter"  >
     <div class="actionsBar">
-        <div>
-            <Button
-            :label="`Like : ${$props.post.likes.length}`"
-            theme="primary"
-            :plain="false"
-            />
-            <Button
-            label="Comment"
-            theme="primary"
-            :plain="false"
-            />
-        </div>
+        <span class="likeStatus" v-if="$props.post && $props.post.likes">
+            <Icon icon="heart" />
+            <span class="total">{{$props.post.likes.length}}</span>
+        </span>
     </div>
     <div class="commentForm">
-        <form>
-            <InputText />
-            <Button
-                label="Envoyer"
-                theme="primary"
-                :plain="true"
-            />
-        </form>
+        <a href="/">Connectez-vous</a> pour aimer ou commenter
     </div>
   </div>
 </template>
 
 <script>
-import InputText from '@/components/atoms/InputText.vue';
-import Button from '@/components/atoms/Button.vue';
+import Icon from '@/components/atoms/Icon.vue';
 
 export default {
     name: 'PostHeader',
     components: {
-        InputText,
-        Button,
+        Icon,
     },
     props: {
         post: Object,
@@ -53,11 +36,25 @@ export default {
       border-top: 1px solid #eee;
       background-color: white;
       .actionsBar {
+          padding: 1em;
           display: flex;
-          justify-content: space-between;
+          .likeStatus {
+              display: flex;
+              align-items: center;
+              svg {
+                  margin-top: 5px;
+              }
+              .total {
+                  margin-left: .5em;
+              }
+          }
       }
       .commentForm {
+         padding: 1em 0;
          border-top: 1px solid #eee;
+         a {
+             color: $secondary;
+         }
       }
   }
 </style>

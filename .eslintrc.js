@@ -25,7 +25,6 @@ module.exports = {
     'no-shadow': [2],
     'comma-dangle': [2, 'always-multiline'],
     quotes: [2, 'single'],
-    'max-len': ['error', { code: 160 }],
     'comma-spacing': [2, {
         before: false,
         after: true,

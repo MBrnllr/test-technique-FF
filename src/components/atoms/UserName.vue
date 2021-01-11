@@ -16,6 +16,8 @@ export default {
 
 <style lang="scss">
     .userName {
+        display: inline-flex;
         text-transform: uppercase;
+        font-weight: 900;
     }
 </style>

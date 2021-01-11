@@ -7,7 +7,10 @@
                 :lastName="$props.user.lastName"
             />
             <div class="userJob">{{$props.user.job}} @ {{$props.user.company}}</div>
-            <div class="userLocation">{{$props.user.location}} </div>
+            <div class="userLocation">
+                <Icon icon="location" />
+                {{$props.user.location}}
+            </div>
         </div>
     </div>
 </template>
@@ -15,12 +18,14 @@
 <script>
 import Badge from '@/components/atoms/Badge.vue';
 import UserName from '@/components/atoms/UserName.vue';
+import Icon from '@/components/atoms/Icon.vue';
 
 export default {
     name: 'UserCard',
     components: {
         Badge,
         UserName,
+        Icon,
     },
     props: {
         user: Object,
@@ -39,10 +44,15 @@ export default {
           margin-left: 12px;
           text-align: left;
           .userJob {
+              color: $tertirary;
               font-size: .9em;
           }
           .userLocation {
+              color: $tertirary;
               font-size: .9em;
+              svg {
+                  fill: $tertirary;
+              }
           }
       }
   }

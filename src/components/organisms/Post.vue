@@ -5,7 +5,7 @@
   >
     <div>
         <PostHeader :user="$props.user" />
-        <PostThumbnail :url="$props.post.image" />
+        <PostThumbnail :image="$props.post.image" />
     </div>
     <div>
         <PostBody

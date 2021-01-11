@@ -4,6 +4,12 @@
         <div id="pageContent">
             <PageHeader title="Feeds" />
             <Grid :posts="$props.data" />
+            <Button
+                :onClick="this.seeMore"
+                theme="primary"
+                :plain="false"
+                label="Voir plus"
+            />
         </div>
         <Footer />
     </div>
@@ -14,6 +20,7 @@ import Header from '@/components/organisms/Header.vue';
 import PageHeader from '@/components/organisms/PageHeader.vue';
 import Footer from '@/components/organisms/Footer.vue';
 import Grid from '@/components/organisms/Grid.vue';
+import Button from '@/components/atoms/Button.vue';
 
 export default {
     name: 'Listing',
@@ -22,9 +29,16 @@ export default {
         PageHeader,
         Footer,
         Grid,
+        Button,
     },
     props: {
         data: Array,
+    },
+    methods: {
+        seeMore() {
+            console.log('== See more');
+            //TODO: vuex;
+        },
     },
 }
 </script>

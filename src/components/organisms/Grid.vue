@@ -30,6 +30,10 @@ export default {
       max-width: 1140px;
       flex-wrap: wrap;
       justify-content: flex-start;
+      padding-bottom: 1em;
+       @media screen and (max-width: $breakpointMd){
+            width: calc(90% + 12px);
+        }
       > * {
         margin: 12px 0 0 12px;
     }

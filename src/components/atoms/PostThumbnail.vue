@@ -22,9 +22,8 @@ export default {
       display: flex;
       width: 100%;
       flex: 50% 0 1;
-      height: 350px;
+      height: 600px;
       border: 1px solid #eee;
-      cursor: pointer;
       .backgroundBox {
           background-color: #E5E5E5;
           background-size: cover;

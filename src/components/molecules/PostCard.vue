@@ -2,18 +2,28 @@
   <div class="card"  v-if="$props.post && $props.post.image" v-on:click="openSinglePostPage()">
     <div class="backgroundBox" :style="`background-image: url(${$props.post.image});`"></div>
     <div class="contentBox">
-        <span>Likes : {{$props.post.likes.length}}</span>
-        -
-        <span>Comment : {{$props.post.comments.length}}</span>
+        <span class="status statusLikes">
+            <Icon icon="heart" />
+            <span class="total">{{$props.post.likes.length}}</span>
+        </span>
+        <span class="status statusComment">
+            <Icon icon="comment" />
+            <span class="total">{{$props.post.comments.length}}</span>
+        </span>
     </div>
   </div>
 </template>
 
 <script>
+import Icon from '@/components/atoms/Icon.vue';
+
 export default {
     name: 'PostCard',
     props: {
         post: Object,
+    },
+    components: {
+        Icon,
     },
     methods: {
         openSinglePostPage () {
@@ -32,6 +42,10 @@ export default {
       height: 350px;
       border: 1px solid #eee;
       cursor: pointer;
+      @media screen and (max-width: $breakpointMd){
+        flex: 28% 0 1;
+        height: 115px;
+      }
       .backgroundBox {
           background-color: #E5E5E5;
           background-size: cover;
@@ -54,6 +68,17 @@ export default {
           transition: all 0.5s ease;
           &:hover {
               opacity: 1;
+          }
+          .status {
+              display: flex;
+              align-items: center;
+              font-weight: 700;
+              + .status {
+                  margin-left: 1.5em;
+              }
+              .total {
+                  margin-left: .5em;
+              }
           }
       }
   }

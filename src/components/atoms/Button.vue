@@ -1,6 +1,7 @@
 <template>
     <div
         class="button"
+        v-on:click="$props.onClick"
         v-bind:class="{'primary': $props.theme === 'primary', 'plain': $props.plain}"
     >
     {{$props.label}}
@@ -14,6 +15,7 @@ export default {
         theme: String,
         plain: Boolean,
         label: String,
+        onClick: Function,
     },
 }
 </script>
@@ -27,6 +29,7 @@ export default {
     align-self: center;
     margin: 1em;
     border-radius: 4px;
+    cursor: pointer;
     &.primary {
         color: #093b59;
         background-repeat: repeat-x;
