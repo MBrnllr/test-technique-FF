@@ -44,7 +44,6 @@ export default {
     },
     methods: {
         seeMore() {
-            console.log('== See more');
             this.$store.dispatch('incrementPagePosts');
         },
     },

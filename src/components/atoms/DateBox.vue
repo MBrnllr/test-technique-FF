@@ -1,7 +1,11 @@
 <template>
   <div class="dateBox">
-    <div class="day">16</div>
-    <div class="month">Déc</div>
+    <div class="day">
+      {{this.$data.dateFormatted[1]}}
+    </div>
+    <div class="month">
+      {{this.$data.dateFormatted[2] | month}}
+    </div>
   </div>
 </template>
 
@@ -10,6 +14,21 @@ export default {
     name: 'DateBox',
     props: {
         date: String,
+    },
+    data () {
+        return {
+            dateFormatted: String,
+        };
+    },
+    filters: {
+        month: function (value) {
+            if (!value) return '';
+            const months = ['Janv.', 'Févr.', 'Mars', 'Avr.', 'Mai', 'Juin', 'Juill.', 'Aout', 'Sept.', 'Oct.', 'Nov.', 'Déc.']
+            return months[value];
+        },
+    },
+    mounted() {
+        this.$data.dateFormatted = this.$props.date.split('T')[0].split('-');
     },
 }
 </script>

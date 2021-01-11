@@ -2,7 +2,7 @@
     <div id="mainContent">
         <Header />
         <div id="pageContent">
-            <PageHeader title="Post" />
+            <PageHeader title="Partagez vos moments favoris" />
             <Post />
         </div>
         <Footer />

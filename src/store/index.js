@@ -25,7 +25,6 @@ const postsModule = {
         INCREMENT_PAGE(state) {
             state.pagePosts += 1;
             this.dispatch('getPosts');
-            console.log(state.pagePosts);
         },
         SET_DOWNLOAD_COMPLETED(state) {
             state.downloadCompleted = !state.downloadCompleted;
