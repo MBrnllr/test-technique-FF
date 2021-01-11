@@ -1,11 +1,16 @@
 <template>
-  <div class="grid grid-cards">
-      <PostCard
-        v-for="post in $props.posts"
-        v-bind:key="post.id"
-        :post="post"
-      />
-  </div>
+  <transition-group
+    name="grid"
+    tag="div"
+    class="grid grid-cards"
+  >
+    <PostCard
+      v-for="(post, index) in $props.posts"
+      v-bind:key="`post-${index}-${post.id}`"
+      :post="post"
+      class="grid-item"
+    />
+  </transition-group>
 </template>
 
 <script>
@@ -37,5 +42,16 @@ export default {
       > * {
         margin: 12px 0 0 12px;
     }
+  }
+
+  .grid-item {
+    display: inline-block;
+  }
+  .grid-enter-active, .grid-leave-active {
+    transition: all 1s;
+  }
+  .grid-enter, .grid-leave-to /* .list-leave-active below version 2.1.8 */ {
+    opacity: 0;
+    transform: scale(0.5);
   }
 </style>

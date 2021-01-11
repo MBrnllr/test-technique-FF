@@ -5,6 +5,7 @@
             <PageHeader title="Feeds" />
             <Grid :posts="$props.data" />
             <Button
+                v-if="!this.allPostsLoaded"
                 :onClick="this.seeMore"
                 theme="primary"
                 :plain="false"
@@ -16,6 +17,8 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
 import Header from '@/components/organisms/Header.vue';
 import PageHeader from '@/components/organisms/PageHeader.vue';
 import Footer from '@/components/organisms/Footer.vue';
@@ -34,10 +37,15 @@ export default {
     props: {
         data: Array,
     },
+    computed: {
+        ...mapGetters([
+            'allPostsLoaded',
+        ]),
+    },
     methods: {
         seeMore() {
             console.log('== See more');
-            //TODO: vuex;
+            this.$store.dispatch('incrementPagePosts');
         },
     },
 }

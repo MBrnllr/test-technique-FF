@@ -1,14 +1,13 @@
 <template>
   <Listing
-    v-if="$data.data"
-    :data="$data.data"
+    v-if="!this.$data.loader"
+    :data="this.posts"
   />
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 import Listing from '@/components/templates/Listing.vue';
-
-const axios = require('axios');
 
 export default {
     name: 'Home',
@@ -19,16 +18,23 @@ export default {
         return {
             data: [],
             page: Number,
+            loader: true,
         };
     },
-    beforeMount () {
-        this.getPosts();
+    computed: {
+        ...mapGetters([
+            'posts',
+        ]),
     },
-    methods: {
-        async getPosts () {
-            const { data } = await axios.get('https://5ff9ce0917386d0017b521c4.mockapi.io/fake-api/posts?page=1&limit=9');
-            this.$data.data = data;
-        },
+    beforeMount () {
+        if (this.$data.loader) {
+            this.$store.dispatch('getPosts')
+                .then(() => { this.$data.loader = false; })
+                .catch(() => { this.$data.loader = false; });
+        }
+    },
+    mounted() {
+        console.log(this);
     },
 }
 </script>
