@@ -33,8 +33,5 @@ export default {
                 .catch(() => { this.$data.loader = false; });
         }
     },
-    mounted() {
-        console.log(this);
-    },
 }
 </script>

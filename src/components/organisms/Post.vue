@@ -1,19 +1,21 @@
 <template>
+    <div>
   <div
     class="postContent"
-    v-if="$props.post"
+    v-if="this.post"
   >
     <div>
-        <PostHeader :user="$props.user" />
-        <PostThumbnail :image="$props.post.image" />
+        <PostHeader :userId="this.post.userId" />
+        <PostThumbnail :image="this.post.image" />
     </div>
     <div>
         <PostBody
-            :user="$props.user"
-            :post="$props.post"
+            :userId="this.post.userId"
+            :post="this.post"
         />
-        <PostFooter :post="$props.post" />
+        <PostFooter :post="this.post" />
     </div>
+</div>
 </div>
 </template>
 
@@ -32,9 +34,14 @@ export default {
         PostBody,
         PostFooter,
     },
-    props: {
-        post: Object,
-        user: Object,
+    computed: {
+        post () {
+            return this.$store.getters.getPostById(this.$router.history.current.params.postId);
+        },
+    },
+    beforeMount () {
+        this.$store.dispatch('getPost', this.$router.history.current.params.postId);
+        this.$store.dispatch('getUsers');
     },
 }
 </script>

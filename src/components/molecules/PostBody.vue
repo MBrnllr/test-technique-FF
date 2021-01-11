@@ -23,14 +23,19 @@ import Comment from '@/components/molecules/Comment.vue';
 
 
 export default {
-    name: 'PostHeader',
+    name: 'PostBody',
     components: {
         DateBox,
         Comment,
     },
     props: {
-        user: Object,
+        userId: Number,
         post: Object,
+    },
+    computed: {
+        user () {
+            return this.$store.getters.getUserById(this.$props.userId);
+        },
     },
 }
 </script>

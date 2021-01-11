@@ -30,6 +30,11 @@ const postsModule = {
         SET_DOWNLOAD_COMPLETED(state) {
             state.downloadCompleted = !state.downloadCompleted;
         },
+        ADD_POST(state, post) {
+            if (!this.getters.getPostById(post.id)){
+                state.posts.push(post);
+            }
+        },
     },
     actions: {
         getPosts: (store) => {
@@ -50,6 +55,17 @@ const postsModule = {
                 store.commit('SET_DOWNLOAD_COMPLETED');
             }
         },
+        getPost: (store, id) => {
+            if (!store.getters.getPostById(id)){
+                const requests = [];
+                const request = axios.get(`https://5ff9ce0917386d0017b521c4.mockapi.io/fake-api/posts/${id}`);
+                requests.push(request);
+                return Promise.all(requests).then((response) => {
+                    const post = response[0].data;
+                    store.commit('ADD_POST', post);
+                }).catch(error => `Request failed for getPost : ${error}`);
+            }
+        },
     },
 }
 
@@ -59,8 +75,7 @@ const usersModule = {
     },
     getters: {
         users: state => state.users,
-        getUserByUserId: state => id => state.users.find(user => user.id === id),
-
+        getUserById: state => id => state.users.find(user => user.id == id),
     },
     mutations: {
         SET_USERS(state, users) {

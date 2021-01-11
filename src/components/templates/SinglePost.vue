@@ -3,10 +3,7 @@
         <Header />
         <div id="pageContent">
             <PageHeader title="Post" />
-            <Post
-                :post="$props.post"
-                :user="$props.user"
-            />
+            <Post />
         </div>
         <Footer />
     </div>
@@ -25,10 +22,6 @@ export default {
         PageHeader,
         Footer,
         Post,
-    },
-    props: {
-        post: Object,
-        user: Object,
     },
 }
 </script>

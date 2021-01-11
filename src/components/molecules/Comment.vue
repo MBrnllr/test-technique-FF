@@ -1,8 +1,9 @@
 <template>
     <div class="comment">
         <UserName
-            firstName="John"
-            lastName="Doe"
+            v-if="this.user"
+            :firstName="this.user.firstName"
+            :lastName="this.user.lastName"
         />
         <span>
             {{$props.message}}
@@ -21,6 +22,11 @@ export default {
     props: {
         userId: Number,
         message: String,
+    },
+    computed: {
+        user () {
+            return this.$store.getters.getUserById(this.$props.userId);
+        },
     },
 }
 </script>

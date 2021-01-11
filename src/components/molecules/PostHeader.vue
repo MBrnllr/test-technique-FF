@@ -1,6 +1,8 @@
 <template>
   <div class="postHeader"  >
-    <UserCard :user="$props.user" />
+    <UserCard
+      v-if="this.user"
+      :user="this.user" />
     <Button
       :onClick="() => {}"
       label="Voir le profil"
@@ -21,7 +23,12 @@ export default {
         Button,
     },
     props: {
-        user: Object,
+        userId: Number,
+    },
+    computed: {
+        user () {
+            return this.$store.getters.getUserById(this.$props.userId);
+        },
     },
 }
 </script>
