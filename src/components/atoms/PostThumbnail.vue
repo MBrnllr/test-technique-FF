@@ -23,9 +23,9 @@ export default {
       width: 100%;
       flex: 50% 0 1;
       height: 600px;
-      border: 1px solid #eee;
+      border: 1px solid $borderColor;
       .backgroundBox {
-          background-color: #E5E5E5;
+          background-color: $borderColor;
           background-size: cover;
           position: absolute;
           display: flex;

@@ -25,8 +25,9 @@ export default {
       h1 {
         text-transform: uppercase;
         text-align: center;
-        color:hsla(0,0%,100%,.85);
+        color:$headerColor;
         font-size: 1.5em;
+        font-family: $titleFont;
       }
   }
 </style>

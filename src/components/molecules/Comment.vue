@@ -48,7 +48,7 @@ export default {
              display: block;
              height: 2px;
              width: 40px;
-             background-color: #ccc;
+             background-color: $borderColor;
              margin-bottom: 1em;
              transform: translateY(-50%);
          }

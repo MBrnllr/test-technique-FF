@@ -43,7 +43,7 @@ export default {
 <style lang="scss">
   .postBody {
       display: flex;
-      background-color: white;
+      background-color: $light;
       padding: 1em;
       @media screen and (max-width: $breakpointMd){
         flex-flow: column;

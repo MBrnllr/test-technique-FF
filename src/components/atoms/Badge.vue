@@ -22,11 +22,11 @@ export default {
       display: inline-flex;
       width: 60px;
       height: 60px;
-      border: 1px solid #eee;
+      border: 1px solid $borderColor;
       border-radius: 50%;
       overflow: hidden;
       .backgroundBox {
-          background-color: #E5E5E5;
+          background-color: $borderColor;
           background-size: cover;
           position: absolute;
           display: flex;

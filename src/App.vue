@@ -5,6 +5,7 @@
 </template>
 
 <style lang="scss">
+
 body {
   background-color: $bgColor;
   margin: 0;
@@ -15,11 +16,15 @@ body {
   flex-flow: row;
   flex: 1;
   min-height: 100vh;
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: $baseFont;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: $primary;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $titleFont;
 }
 
 #nav {
@@ -27,11 +32,7 @@ body {
 
   a {
     font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+    color: $secondary;
   }
 }
 </style>

@@ -33,8 +33,8 @@ export default {
       width: 100%;
       flex: 50% 0 1;
       flex-flow: column;
-      border-top: 1px solid #eee;
-      background-color: white;
+      border-top: 1px solid $borderColor;
+      background-color: $light;
       .actionsBar {
           padding: 1em;
           display: flex;
@@ -51,7 +51,7 @@ export default {
       }
       .commentForm {
          padding: 1em 0;
-         border-top: 1px solid #eee;
+         border-top: 1px solid $borderColor;
          a {
              color: $secondary;
          }

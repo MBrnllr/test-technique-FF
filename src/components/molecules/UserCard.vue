@@ -41,6 +41,9 @@ export default {
       flex: 1;
       padding: 1em;
       .userDetails {
+          display: flex;
+          flex-flow: column;
+          justify-content: center;
           margin-left: 12px;
           text-align: left;
           .userJob {

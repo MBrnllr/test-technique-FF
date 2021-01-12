@@ -23,22 +23,23 @@ export default {
 <style lang="scss">
   .button {
     display: inline-flex;
-    padding: 10px;
+    padding: 8px 10px 10px;
     height: 40px;
     box-sizing: border-box;
     align-self: center;
     margin: 1em;
     border-radius: 4px;
+    font-family: $buttonFont;
     cursor: pointer;
     &.primary {
-        color: #093b59;
+        color: $primary;
         background-repeat: repeat-x;
         border: 1px solid;
-        border-color: #ff9444 #ff648c #ff648c #ff9444;
+        border-color: $borderGradient;
         transition: all 1s ease;
         &.plain, &:hover {
-            color: white;
-            background-image: linear-gradient(45deg,#ff9444,#ff648c);
+            color: $light;
+            background-image: linear-gradient(45deg,$gradientFrom,$gradientTo);
         }
     }
     + .button {

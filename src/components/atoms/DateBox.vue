@@ -1,10 +1,10 @@
 <template>
   <div class="dateBox">
     <div class="day">
-      {{this.$data.dateFormatted[1]}}
+      {{this.$data.dateFormatted[2]}}
     </div>
     <div class="month">
-      {{this.$data.dateFormatted[2] | month}}
+      {{this.$data.dateFormatted[1] | month}}
     </div>
   </div>
 </template>
@@ -24,6 +24,9 @@ export default {
         month: function (value) {
             if (!value) return '';
             const months = ['Janv.', 'Févr.', 'Mars', 'Avr.', 'Mai', 'Juin', 'Juill.', 'Aout', 'Sept.', 'Oct.', 'Nov.', 'Déc.']
+            if (value[0] == '0'){
+                return months[value[1]];
+            }
             return months[value];
         },
     },
@@ -45,7 +48,7 @@ export default {
       color: $secondary;
       border-width: 0px;
       border-style: solid;
-      border-color: #ff9444 #ff648c #ff648c #ff9444;
+      border-color: $borderGradient;
       border-right-width: 2px;
       @media screen and (max-width: $breakpointMd){
         border-right-width: 0px;

@@ -1,12 +1,26 @@
-$bgColor: #EDF6FB;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Open+Sans:wght@300;400;700&display=swap');
+
 $primary: #102333;
-$secondary: #f66e4c;
+$secondary: #f97465;
 $tertirary: #91aabf;
+$gradientFrom: #ff9444;
+$gradientTo: #ff648c;
+
+$bgColor: #EDF6FB;
+$borderColor: #e9ecef;
+$borderGradient: $gradientFrom $gradientTo $gradientTo $gradientFrom;
 $headerBg: $primary;
+$headerColor: hsla(0,0%,100%,.85);
 $footerBg: $primary;
+$footerColor: hsla(0,0%,100%,.4);
+
+$light: #fff;
 
 $breakpointSm: 576px;
 $breakpointMd: 768px;
 $breakpointLg: 992px;
 $breakpointXl: 1200px;
 
+$titleFont: Montserrat, 'Open Sans', open-sans, sans-serif;
+$buttonFont: 'Open Sans', open-sans, sans-serif;
+$baseFont: Roboto, sans-serif;

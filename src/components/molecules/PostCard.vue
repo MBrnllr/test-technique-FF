@@ -40,14 +40,14 @@ export default {
       width: 100%;
       flex: 32% 0 1;
       height: 350px;
-      border: 1px solid #eee;
+      border: 1px solid $borderColor;
       cursor: pointer;
       @media screen and (max-width: $breakpointMd){
         flex: 28% 0 1;
         height: 115px;
       }
       .backgroundBox {
-          background-color: #E5E5E5;
+          background-color: $borderColor;
           background-size: cover;
           position: absolute;
           display: flex;
@@ -63,7 +63,7 @@ export default {
           align-items: center;
           width: 100%;
           height: 100%;
-          background-color: rgba(229, 229, 229, .8);
+          background-color: $borderColor;
           opacity: 0;
           transition: all 0.5s ease;
           &:hover {

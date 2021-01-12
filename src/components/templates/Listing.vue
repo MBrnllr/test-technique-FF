@@ -2,7 +2,7 @@
     <div id="mainContent">
         <Header />
         <div id="pageContent">
-            <PageHeader title="Feeds" />
+            <PageHeader title="PARTAGEZ VOS MOMENTS FAVORIS" />
             <Grid :posts="$props.data" />
             <Button
                 v-if="!this.allPostsLoaded"

@@ -31,7 +31,4 @@ export default {
         max-height: 22px;
     }
   }
-  a {
-    color: hsla(0,0%,100%,.4);
-  }
 </style>

@@ -39,8 +39,8 @@ export default {
       display: flex;
       width: 100%;
       flex: 50% 0 1;
-      border: 1px solid #eee;
-      background-color: white;
+      border: 1px solid $borderColor;
+      background-color: $light;
       @media screen and (max-width: $breakpointMd){
         flex-flow: column;
       }

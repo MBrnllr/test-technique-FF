@@ -13,7 +13,7 @@ export default {
 <style lang="scss">
   #footer {
     background-color: $footerBg;
-    color: hsla(0,0%,100%,.4);
+    color: $footerColor;
     padding: 1em 2em;
     box-sizing: border-box;
     font-size: .75rem;
