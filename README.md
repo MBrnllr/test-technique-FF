@@ -1,5 +1,10 @@
 # test-technique-ff
 
+![Optional Text](../main/screens/feed.png)
+![Optional Text](../main/screen/single.png)
+
+Temps : environ 6h
+
 ## Project setup
 ```
 yarn install
