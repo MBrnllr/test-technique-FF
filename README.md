@@ -1,9 +1,8 @@
 # test-technique-ff
 
+Temps d'exécution : environ 6h
 ![Optional Text](../main/screens/feed.png)
-![Optional Text](../main/screen/single.png)
-
-Temps : environ 6h
+![Optional Text](../main/screens/single.png)
 
 ## Project setup
 ```
